@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        color: black;
+        font-weight: normal;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        width: 467px;
+        padding: 77px;
+        background-color: #f2f2f2;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-group {
+        position: relative;
+    }
+
+    .form-control {
+        flex: 3;
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+    }
+
+
+    .icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: red;
+        cursor: pointer;
+        display: none;
+        /* Initially hidden */
+    }
+
+    .btn {
+        background-color: red;
+        color: white;
+        font-weight: bold;
+        padding: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 490px;
+        text-align: center;
+        display: block;
+        font-size: 20px;
+        font-family: monospace;
+        border-radius: 5px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <form action="">
+            <div class="form-group">
+                <label for="first_name" class="error-label">First Name</label>
+                <input type="text" class="form-control error-input" id="first_name" name="name"
+                    placeholder="First name">
+                <span class="icon" id="fname_error_icon">&#9888;</span>
+            </div>
+            <span id="fname_error" style="color: red; margin-left: 50px;"></span>
+
+            <div class="form-group">
+                <label for="email" class="error-label">Email</label>
+                <input type="email" class="form-control error-input" id="email" name="email" placeholder="Email">
+                <span class="icon" id="email_error_icon">&#9888;</span>
+            </div>
+            <span id="email_error" style="color: red; margin-left: 50px;"></span>
+
+            <div class="form-group">
+                <label for="password" class="error-label">Password</label>
+                <input type="password" class="form-control error-input" id="password" name="password"
+                    placeholder="Password">
+                <span class="icon" id="password_error_icon">&#9888;</span>
+            </div>
+            <span id="password_error" style="color: red; margin-left: 50px;"></span>
+
+            <div class="form-group">
+                <label for="hobbies" class="error-label">Hobbies</label>
+                <input type="text" class="form-control error-input" id="hobbies" name="hobbies" placeholder="Hobbies">
+                <span class="icon" id="hobbies_error_icon">&#9888;</span>
+            </div>
+            <span id="hobbies_error" style="color: red; margin-left: 50px;"></span>
+
+            <div class="form-group">
+                <button type="button" class="btn" onclick="validateForm()">
+                    Send
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var firstName = document.getElementById("first_name").value.trim();
+            var fnameError = document.getElementById("fname_error");
+            var fnameErrorIcon = document.getElementById("fname_error_icon");
+            var email = document.getElementById("email").value.trim();
+            var emailError = document.getElementById("email_error");
+            var emailErrorIcon = document.getElementById("email_error_icon");
+            var password = document.getElementById("password").value.trim();
+            var passwordError = document.getElementById("password_error");
+            var passwordErrorIcon = document.getElementById("password_error_icon");
+            var hobbies = document.getElementById("hobbies").value.trim();
+            var hobbiesError = document.getElementById("hobbies_error");
+            var hobbiesErrorIcon = document.getElementById("hobbies_error_icon");
+
+            // Reset error messages and icons
+            fnameError.innerHTML = "";
+            fnameErrorIcon.style.display = "none";
+            emailError.innerHTML = "";
+            emailErrorIcon.style.display = "none";
+            passwordError.innerHTML = "";
+            passwordErrorIcon.style.display = "none";
+            hobbiesError.innerHTML = "";
+            hobbiesErrorIcon.style.display = "none";
+
+            var blankFieldCount = 0;
+
+            if (firstName === "") {
+                fnameError.innerHTML = "First name is required";
+                fnameErrorIcon.style.display = "block";
+                blankFieldCount++;
+            }
+
+            if (email === "") {
+                emailError.innerHTML = "Email is required";
+                emailErrorIcon.style.display = "block";
+                blankFieldCount++;
+            }
+
+            if (password === "") {
+                passwordError.innerHTML = "Password is required";
+                passwordErrorIcon.style.display = "block";
+                blankFieldCount++;
+            }
+
+            if (hobbies === "") {
+                hobbiesError.innerHTML = "Hobbies is required";
+                hobbiesErrorIcon.style.display = "block";
+                blankFieldCount++;
+            }
+
+            if (blankFieldCount >= 2) {
+                // If there are 2 or more blank fields, prevent form submission
+                return false;
+            }
+
+            // Allow form submission if there are 0 or 1 blank fields
+            return true;
+        }
+
+
+    </script>
+
+    </script>
+
+    </script>
+</body>
+
+</html>

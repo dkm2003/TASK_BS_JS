@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Date and Time Display</title>
+  <script>
+    function showDate() {
+      const currentDate = new Date();
+      const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
+      const dateText = currentDate.toLocaleDateString(undefined, options);
+      document.getElementById("dateDisplay").innerHTML =dateText;
+    }
+
+    function showTime() {
+      const currentTime = new Date();
+      const options = {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        timeZoneName: 'short'
+      };
+      const timeText = currentTime.toLocaleDateString(undefined, options);
+      document.getElementById("timeDisplay").innerHTML =timeText;
+    }
+  </script>
+</head>
+<body>
+  <h1>Date and Time Display</h1>
+  <button onclick="showDate()">Show Date</button>
+  <p id="dateDisplay"></p><br>
+  <button onclick="showTime()">Show Time</button>
+  <p id="timeDisplay"></p>
+</body>
+</html>

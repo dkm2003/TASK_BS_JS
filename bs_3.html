@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-aMrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <title>Task-3</title>
+    <style>
+      .row {
+        margin-right: 30px;
+      }
+      .col {
+        width: 300px;
+      }
+      .card {
+        width: 300px;
+      }
+      footer {
+        margin-top: 20px;
+      }
+      i {
+        margin-top: 30px;
+        margin-left: 20px;
+        font-size: 20px;
+        color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4">
+      <a
+        href="/"
+        class="d-flex align-items-center text-dark text-decoration-none mx-4"
+      >
+        <a class="navbar-brand text-dark" href="#">Company Name</a>
+      </a>
+      <nav class="d-inline-flex mt-5 mt-md-0 ms-md-auto mx-4 my-2">
+        <a class="nav-link text-dark" href="#">Features</a>
+        <a class="nav-link text-dark" href="#">Enterprise</a>
+        <a class="nav-link text-dark" href="#">Support</a>
+        <a class="nav-link text-dark" href="#">Pricing</a>
+        <form class="d-flex">
+          <button class="btn btn-outline-primary" type="submit">
+            Sign Up
+          </button>
+        </form>
+      </nav>
+    </div>
+    <center>
+      <h2>Pricing</h2>
+      <p>
+        Quickly build an effective pricing table for your potential customers
+        with this <br />Bootstrap example.It's built with default Bootstrap
+        components and utilities <br />with little customization.
+      </p>
+      <!-- till here -->
+      <div class="row">
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header">
+              <h4 class="my-0 fw-normal">Free</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">
+                $0<small class="text-muted fw-light">/mo</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>10 users included</li>
+                <li>2 GB of storage</li>
+                <li>Email support</li>
+                <li>Help center access</li>
+              </ul>
+              <button
+                type="button"
+                class="w-100 btn btn-lg btn-outline-primary"
+              >
+                Sign up for free
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 rounded-3 shadow-sm">
+            <div class="card-header">
+              <h4 class="my-0 fw-normal">Pro</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">
+                $15<small class="text-muted fw-light">/mo</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>20 users included</li>
+                <li>10 GB of storage</li>
+                <li>Priority email support</li>
+                <li>Help center access</li>
+              </ul>
+              <button type="button" class="w-100 btn btn-lg btn-primary">
+                Get started
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-4 shadow-sm">
+            <div class="card-header">
+              <h4 class="my-0 fw-normal">Enterprise</h4>
+            </div>
+            <div class="card-body">
+              <h1 class="card-title pricing-card-title">
+                $29<small class="text-muted fw-light">/mo</small>
+              </h1>
+              <ul class="list-unstyled mt-3 mb-4">
+                <li>30 users included</li>
+                <li>15 GB of storage</li>
+                <li>Phone and email support</li>
+                <li>Help center access</li>
+              </ul>
+              <button type="button" class="w-100 btn btn-lg btn-primary">
+                Contact us
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </center>
+    <footer>
+      <div class="container shadow-lg">
+        <div class="row">
+          <div class="col-3 my-5">
+            <i class="fa-brands fa-bootstrap"></i>
+            <p>&copy; 2017</p>
+          </div>
+          <div class="col-3 my-5">
+            <h4>Features</h4>
+            <ul>
+              <li class="list-unstyled">Cool stuff</li>
+              <li class="list-unstyled">Random feature</li>
+              <li class="list-unstyled">Team feature</li>
+            </ul>
+          </div>
+          <div class="col-3 my-5">
+            <h4>Resources</h4>
+            <ul>
+              <li class="list-unstyled">Resource</li>
+              <li class="list-unstyled">Resource name</li>
+              <li class="list-unstyled">Another resource</li>
+            </ul>
+          </div>
+          <div class="col-3 my-5">
+            <h4>About</h4>
+            <ul>
+              <li class="list-unstyled">Team</li>
+              <li class="list-unstyled">Locations</li>
+              <li class="list-unstyled">Privacy</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

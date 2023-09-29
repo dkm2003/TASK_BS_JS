@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Task-8</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background: linear-gradient(to bottom, #ffffcc, #ff99cc);
+        padding: 10px;
+        font-size: 20px;
+      }
+      h1 {
+        color: blue;
+        margin-left: 550px;
+      }
+      label {
+        width: 150px;
+        display: inline-block;
+      }
+      input[type="text"],
+      input[type="textarea"],
+      input[type="password"] {
+        width: 50%;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .login-link {
+        text-align: right;
+      }
+      .btn {
+        color: white;
+        border-radius: 50px;
+        align-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+    <br />
+    <div class="container">
+      <form>
+        <div class="input-group">
+          <label for="para">First Name</label>
+          <input
+            class="my-2"
+            id="fname"
+            type="text"
+            onkeyup="checkStrengthfname()"
+          />
+          <span id="fmsg">POOR</span>
+        </div>
+
+        <div class="input-group">
+          <label for="para">Last Name</label>
+          <input
+            class="my-2"
+            id="lname"
+            type="text"
+            onkeyup="checkStrengthlname()"
+          />
+          <span id="lmsg">POOR</span>
+        </div>
+
+        <div class="input-group">
+          <label for="para">Email</label>
+          <input
+            class="my-2"
+            id="email"
+            type="text"
+            onkeyup="checkStrengthemail()"
+          />
+          <span id="emsg">POOR</span>
+        </div>
+
+        <div class="input-group">
+          <label for="para">Password</label>
+          <input
+            class="my-2"
+            id="pwd"
+            type="password"
+            onkeyup="checkStrengthpwd()"
+          />
+          <span id="pmsg">POOR</span>
+        </div>
+
+        <div class="input-group">
+          <label for="para">Re-enter Password</label>
+          <input
+            class="my-2"
+            id="repwd"
+            type="password"
+            onkeyup="checkStrengthrpwd()"
+          />
+          <span id="rpmsg">POOR or MISMATCH</span>
+        </div>
+
+        <div class="input-group" rowspan="2">
+          <label for="para">Gender:</label>
+
+          <input class="my-2" type="radio" name="gender" /><label>Male</label
+          ><br />
+          <input class="my-2" type="radio" name="gender" /><label>Female</label
+          ><br />
+        </div>
+
+        <div class="input-group">
+          <label for="para">Age:</label>
+          <input
+            class="my-2"
+            id="age"
+            type="text"
+            onkeyup="checkStrengthage()"
+          />
+          <span id="amsg">POOR</span>
+        </div>
+
+        <div class="input-group">
+          <label for="para">Phone Number</label>
+          <input
+            class="my-2"
+            id="phone"
+            type="text"
+            onkeyup="checkStrengthph()"
+          />
+          <span id="phmsg">POOR</span>
+        </div>
+
+        <div class="input-group">
+          <label for="para">Address</label>
+          <textarea
+            id="add"
+            class="my-2 center-textarea"
+            name="address"
+            onkeyup="checkStrengthadd()"
+            rows="3"
+            cols="40"
+          ></textarea>
+          <span id="addmsg">POOR</span>
+        </div>
+
+        <div class="input-group">
+          <label for="para">State</label>
+          <input
+            class="my-2"
+            id="state"
+            type="text"
+            onkeyup="checkStrengthst()"
+          />
+          <span id="smsg">POOR</span>
+        </div>
+
+        <label for="para">Country</label>
+        <select class="my-3">
+          <option>Choose your country</option>
+          <option>India</option>
+          <option>USA</option>
+          <option>Russia</option>
+          <option>Japan</option> </select
+        ><br />
+
+        <label for="para">Languages Known</label>
+        <input type="checkbox" value="english" /><label>English</label>
+        <input type="checkbox" value="Kannada" /><label>Kannada</label>
+        <input type="checkbox" value="Hindi" /><label>Hindi</label>
+        <input type="checkbox" value="Telugu" /><label>Telugu</label>
+        <br />
+
+        <input class="my-3" type="checkbox" value="declaration" checked />
+        Hereby I declare all the given details are true
+        <br />
+
+        <div class="login-link">
+          Log in to
+          <a href="https://www.ethnus.com" target="_blank">
+            Ethnus
+          </a>
+          website
+        </div>
+      </form>
+      <br />
+      <button class="btn btn-danger my-3">Register</button>
+    </div>
+    <script>
+      function checkStrengthfname() {
+        var fname = document.getElementById("fname").value;
+        if (fname.length < 5) {
+          document.getElementById("fmsg").innerText = "POOR";
+          document.getElementById("fmsg").style.color = "red";
+        } else {
+          document.getElementById("fmsg").innerText = "GOOD";
+          document.getElementById("fmsg").style.color = "green";
+        }
+      }
+
+      function checkStrengthlname() {
+        var lname = document.getElementById("lname").value;
+        if (lname.length < 5) {
+          document.getElementById("lmsg").innerText = "POOR";
+          document.getElementById("lmsg").style.color = "red";
+        } else {
+          document.getElementById("lmsg").innerText = "GOOD";
+          document.getElementById("lmsg").style.color = "green";
+        }
+      }
+
+      function checkStrengthemail() {
+        var email = document.getElementById("email").value;
+        if (email.includes("@")) {
+          document.getElementById("emsg").innerText = "GOOD";
+          document.getElementById("emsg").style.color = "green";
+        } else {
+          document.getElementById("emsg").innerText = "POOR";
+          document.getElementById("emsg").style.color = "red";
+        }
+      }
+
+      function checkStrengthpwd() {
+        var pwd = document.getElementById("pwd").value;
+        if (pwd.length < 8) {
+          document.getElementById("pmsg").innerText = "POOR";
+          document.getElementById("pmsg").style.color = "red";
+        } else {
+          document.getElementById("pmsg").innerText = "GOOD";
+          document.getElementById("pmsg").style.color = "green";
+        }
+      }
+
+      function checkStrengthrpwd() {
+        var pwd = document.getElementById("pwd").value;
+        var recheck = document.getElementById("repwd").value;
+        if (recheck !== pwd) {
+          document.getElementById("rpmsg").innerText = "POOR or MISMATCH";
+          document.getElementById("rpmsg").style.color = "red";
+        } else {
+          document.getElementById("rpmsg").innerText = "GOOD";
+          document.getElementById("rpmsg").style.color = "green";
+        }
+      }
+
+      function checkStrengthage() {
+        var age = document.getElementById("age").value;
+        if (age < 18) {
+          document.getElementById("amsg").innerText = "POOR";
+          document.getElementById("amsg").style.color = "red";
+        } else {
+          document.getElementById("amsg").innerText = "GOOD";
+          document.getElementById("amsg").style.color = "green";
+        }
+      }
+
+      function checkStrengthph() {
+        var phone = document.getElementById("phone").value;
+        if (phone.length < 10) {
+          document.getElementById("phmsg").innerText = "POOR";
+          document.getElementById("phmsg").style.color = "red";
+        } else {
+          document.getElementById("phmsg").innerText = "GOOD";
+          document.getElementById("phmsg").style.color = "green";
+        }
+      }
+
+      function checkStrengthadd() {
+        var add = document.getElementById("add").value;
+        if (add.length < 10) {
+          document.getElementById("addmsg").innerText = "POOR";
+          document.getElementById("addmsg").style.color = "red";
+        } else {
+          document.getElementById("addmsg").innerText = "GOOD";
+          document.getElementById("addmsg").style.color = "green";
+        }
+      }
+
+      function checkStrengthst() {
+        var state = document.getElementById("state").value;
+        if (state.length < 2) {
+          document.getElementById("smsg").innerText = "POOR";
+          document.getElementById("smsg").style.color = "red";
+        } else {
+          document.getElementById("smsg").innerText = "GOOD";
+          document.getElementById("smsg").style.color = "green";
+        }
+      }
+    </script>
+  </body>
+</html>

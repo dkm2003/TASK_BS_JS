@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Pacifico&family=Roboto+Mono:wght@100&display=swap');
+    * {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  margin:0;
+  padding:0;
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(#fb009f,#fe0202);
+
+}
+
+ #wrapper {
+  width: 500px;
+  height: 50%;
+  overflow: hidden;
+  border: 0px solid #000;
+  margin: 50px auto;
+  padding: 10px;
+} 
+
+.main-content {
+  width: 250px;
+  height: 40%;
+  margin: 10px auto;
+  background-color: lightgray;
+  border: 2px solid lightgray;
+  padding: 40px 50px;
+}
+
+.header {
+  border: 0px solid #000;
+  margin-bottom: 5px;
+}
+
+
+.header h1 {
+font-family: 'Pacifico', cursive;
+font-size: 25px;
+text-transform: capitalize;
+padding: 0 75px;
+
+}
+
+.input-1,
+.input-2 {
+  width: 100%;
+  margin-bottom: 5px;
+  padding: 8px 12px;
+  border: 1px solid #dbdbdb;
+  box-sizing: border-box;
+  border-radius: 3px;
+} 
+
+ .overlap-text {
+  position: relative;
+} 
+
+.overlap-text a {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: #003569;
+  font-size: 14px;
+  text-decoration: none;
+  font-family: 'Overpass Mono', monospace;
+  letter-spacing: -1px;
+}
+
+.btn {
+  background-color: #1a83e5;
+    border: 1px solid #1a83e5;
+    height: 35px;
+    padding: 6px 26px;
+    width: 259px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px
+}
+
+.sub-content {
+  width: 250px;
+  height: 40%;
+  margin: 10px auto;
+  border: 1px solid lightgray;
+  padding: 20px 50px;
+  background-color:lightgray;
+}
+
+.s-part {
+  text-align: center;
+  font-family: 'Overpass Mono', monospace;
+  word-spacing: -3px;
+  letter-spacing: -2px;
+  font-weight: normal;
+  font-size:15px;
+}
+
+.s-part a {
+  text-decoration: none;
+  cursor: pointer;
+  color: #3897f0;
+  font-family: 'Overpass Mono', monospace;
+  word-spacing: -3px;
+  letter-spacing: -2px;
+  font-weight: normal;
+}
+
+input:focus {
+    background-color: yellow;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.overlay-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px; 
+    transform: translateY(-50%); 
+    z-index: 1;
+}
+.box {
+  width: 30px;
+    height: 32px;
+    margin-left: -10px;
+    margin-top: -2px;
+    background-color: rgb(188, 183, 183);
+    border-radius: 4px;
+   
+}
+
+.input-1 {
+    padding-left: 30px; /* Ensure the input text does not overlap with the icon */
+    width: 100%;
+    border-radius: 10px;
+}
+
+.input-2 {
+    padding-left: 30px; /* Ensure the input text does not overlap with the icon */
+    width: 100%;
+    border-radius: 10px;
+}
+.link{
+  margin-left: 8.3rem;
+  margin-bottom:-10px;
+  color: blue;
+}
+</style>
+<body>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Overpass+Mono" rel="stylesheet">
+
+    <div id="wrapper">
+      <div class="main-content">
+          <div class="header">
+              <h1>Instagram</h1>
+              <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Pacifico&family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+          </div>
+          <div class="l-part">
+            <div class="input-container">
+              <input type="text" placeholder="Username" style="margin-left: 10px;" class="input-1" />
+              <div class="overlay-icon box"></div>
+              <i class="overlay-icon fa fa-user " area-hidden="true"></i>
+
+          </div>
+          
+  
+          <div class="overlap-text">
+            <input type="password" placeholder="Password" style="margin-left: 10px;" class="input-2" />
+            <div class="overlay-icon box"></div>
+            <i class="overlay-icon fa fa-lock" aria-hidden="true"></i>
+          
+        </div>
+        
+              <input type="button" value="Log in" class="btn" />
+          </div>
+          <a class="link" href="#">Forgot Password?</a>
+          <input type="checkbox" value="lsRememberMe" id="rememberMe"> <label for="rememberMe">Remember me</label>
+      </div>
+      
+      <div class="sub-content">
+          <div class="s-part">
+              Don't have an account!<a href="#"> Sign up Here</a>
+          </div>
+      </div>
+  </div>
+  
+</body>
+</html>

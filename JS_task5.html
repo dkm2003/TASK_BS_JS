@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Contact Form</title>
+<style>
+body {
+  text-align: center;
+  /* Center the content vertically and horizontally */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Set the height of the body to 100% of the viewport height */
+  height: 100vh;
+  margin: 0;
+  margin-left: 20vmax;
+}
+
+form {
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+label {
+  flex: 1;
+  text-align: right;
+  font-size: x-large;
+  font-family:'Times New Roman', Times, serif;
+  padding-right: 10px;
+}
+
+input, textarea {
+  flex: 2;
+  padding: 10px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.message.textarea {
+  resize: none;
+}
+
+.error-message {
+  color: red;
+  font-size: smaller;
+}
+
+/* Add a CSS class to highlight input fields with errors */
+.error-input {
+  border: 3px solid red !important;
+}
+
+</style>
+</head>
+<body>
+<form action="/" method="post" onsubmit="return validateForm();">
+
+  <div>
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name">
+    <span class="error-message" id="name-error"></span>
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email">
+    <span class="error-message" id="email-error"></span>
+  </div>
+
+  <div>
+    <label for="website">Website:</label>
+    <input type="url" name="website" id="website">
+    <span class="error-message" id="website-error"></span>
+  </div>
+
+  <div>
+    <label for="message">Message:</label>
+    <div class="message">
+    <textarea name="message" id="message"></textarea>
+    <span class="error-message" id="message-error"></span>
+    </div>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+function validateForm() {
+  let isValid = true;
+
+  // Reset error messages and border colors
+  document.querySelectorAll('.error-message').forEach(function(element) {
+    element.textContent = '';
+  });
+  document.querySelectorAll('input, textarea').forEach(function(element) {
+    element.classList.remove('error-input');
+  });
+
+  // Name validation
+  const name = document.getElementById('name').value;
+  if (name.trim() === '') {
+    document.getElementById('name-error').textContent = 'This field is required';
+    document.getElementById('name').classList.add('error-input'); // Add error class
+    isValid = false;
+  }
+
+  // Email validation
+  const email = document.getElementById('email').value;
+  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  if (!emailPattern.test(email)) {
+    document.getElementById('email-error').textContent = 'A Valid email address is required';
+    document.getElementById('email').classList.add('error-input'); // Add error class
+    isValid = false;
+  }
+
+  // Website validation
+  const website = document.getElementById('website').value;
+  if (website.trim() === '') {
+    document.getElementById('website-error').textContent = 'A valid url is required';
+    document.getElementById('website').classList.add('error-input'); // Add error class
+    isValid = false;
+  } else if (!website.startsWith('http://') && !website.startsWith('https://')) {
+    document.getElementById('website-error').textContent = 'Please include http:// or https://';
+    document.getElementById('website').classList.add('error-input'); // Add error class
+    isValid = false;
+  }
+
+  // Message validation
+  const message = document.getElementById('message').value;
+  if (message.trim() === '') {
+    document.getElementById('message-error').textContent = 'This field is required';
+    document.getElementById('message').classList.add('error-input'); // Add error class
+    isValid = false;
+  }
+
+  return isValid;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Set the background image for the body */
+        body {
+            background-image: url('nature.jpg'); /*monika !!!!!!!!!   nature ka image yaha lagana jo bheje hai , location ke sath*/
+            background-size: 1550px 600px;
+            background-position: top center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent horizontal scrollbar */
+        }
+
+        /* Increase the size of the image */
+        .body img {
+            width: 307px;
+            height: 158px;
+            margin-top: 392px;
+        }
+
+        .text {
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            color: black;
+            margin-top: 40px;
+        }
+
+        .text h1 {
+        font-size: 28px; /* Adjust the font size as needed */
+        font-weight: bold; /* Make the text bold */
+        color: rgb(35, 4, 113); /* Change the text color */
+        margin-bottom: 20px; /* Add space below the heading */
+    }
+      
+    </style>
+</head>
+<body>
+    <div class="body">
+        <!-- Adjust scrollamount for speed (higher values make it faster) -->
+        <!-- train  gif  -->
+        <marquee direction="left" scrollamount="15"><a href="https://www.animatedimages.org/cat-trains-75.htm"><img src="https://www.animatedimages.org/data/media/75/animated-train-image-0031.gif" border="0" alt="animated-train-image-0031" id="marqueeImage" /></a></marquee>
+    </div>
+    <div class="text">
+        <h1>Click the follwing button handel the animation</h1>
+        <button id="startButton">Start</button>
+        <button id="stopButton">Stop</button>
+    </div>
+
+    <script>
+        var marquee = document.querySelector("marquee");
+        var marqueeImage = document.getElementById("marqueeImage");
+        var startButton = document.getElementById("startButton");
+        var stopButton = document.getElementById("stopButton");
+        var isAnimating = false;
+
+        function startAnimation() {
+            marquee.start();
+            startButton.disabled = true;
+            stopButton.disabled = false;
+            isAnimating = true;
+        }
+
+        function stopAnimation() {
+            marquee.stop();
+            startButton.disabled = false;
+            stopButton.disabled = true;
+            isAnimating = false;
+        }
+
+        startButton.addEventListener("click", startAnimation);
+        stopButton.addEventListener("click", stopAnimation);
+
+        // Initially stop the animation
+        stopAnimation();
+    </script>
+</body>
+</html>
